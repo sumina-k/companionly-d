@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Companionly - Senior & Special Needs Pet Sitting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CSS CDN を先に読み込む -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind のカスタム設定はその後で -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'gp-blue': '#3476b8',
+            'gp-blue-dark': '#265a8f',
+            'gp-red': '#862633',
+            'gp-gray': '#f4f4f4',
+          },
+          fontFamily: {
+            sans: ['"Nunito"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts: Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "Nunito", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    *:focus-visible {
+      outline: 3px solid #fdb913;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 text-lg">
+
+  <!-- Navigation -->
+  <nav class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-24">
+        <!-- Logo -->
+        <div
+          class="flex-shrink-0 flex items-center cursor-pointer gap-4"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          <div class="relative flex items-center justify-center bg-blue-50 w-14 h-14 rounded-xl">
+            <i data-lucide="paw-print" class="text-gp-blue fill-current w-8 h-8"></i>
+            <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-sm border-2 border-white">
+              <div class="bg-gp-red rounded-full w-5 h-5 flex items-center justify-center">
+                <i data-lucide="plus" class="w-4 h-4 text-white stroke-[4]"></i>
+              </div>
+            </div>
+          </div>
+          <span class="text-3xl font-bold text-gp-blue tracking-tight">Companionly</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-10 text-xl font-bold text-gray-700">
+          <a href="#how-it-works" class="hover:text-gp-blue hover:underline decoration-2 underline-offset-4 transition-all">
+            How it Works
+          </a>
+          <a href="#contact" class="hover:text-gp-blue hover:underline decoration-2 underline-offset-4 transition-all">
+            Contact
+          </a>
+        </div>
+
+        <!-- Right Actions (Desktop) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <button
+            onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+            class="bg-gp-blue hover:bg-gp-blue-dark text-white px-8 py-3.5 rounded-full font-bold text-lg shadow-md transition duration-300 transform hover:scale-105 active:scale-95"
+          >
+            Find now
+          </button>
+        </div>
+
+        <!-- Mobile action button -->
+        <div class="md:hidden flex items-center">
+          <button
+            onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+            class="bg-gp-blue hover:bg-gp-blue-dark text-white px-6 py-3 rounded-full font-bold text-base shadow-md transition duration-300"
+          >
+            Find now
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-white pt-20 pb-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+
+        <!-- Left Content -->
+        <div class="text-center lg:text-left mb-16 lg:mb-0">
+          <h1 class="text-5xl tracking-tight font-extrabold text-gray-900 sm:text-6xl md:text-7xl mb-8 leading-tight">
+            Find a Medical-Savvy Dog Sitter in the Bay Area
+          </h1>
+
+          <p class="mt-6 text-2xl text-gray-600 mb-10 leading-relaxed font-medium">
+            Connecting dog parents with sitters who have experience caring with special needs.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
+            <button
+              onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+              class="bg-gp-blue hover:bg-gp-blue-dark text-white px-12 py-5 rounded-full font-bold text-2xl shadow-xl transition duration-300 w-full sm:w-auto transform hover:-translate-y-1"
+            >
+              Find now
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="relative">
+          <div class="rounded-[2.5rem] overflow-hidden shadow-2xl relative border-4 border-white">
+            <!-- ここを修正 -->
+            <img
+                src="images/dog_homecare.jpg"
+                alt="Senior dog looking comfortable on a sofa"
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8">
+                <p class="text-white text-xl font-medium italic">
+                "Peace of mind for you and your best friend."
+                </p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points Section -->
+  <section class="bg-gray-50 py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-black text-gray-900 mb-16">
+        Specialized care while you are away
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <!-- Case 1: Diabetes -->
+        <div
+          class="bg-white p-10 rounded-3xl shadow-md border border-gray-100 flex flex-col items-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+        >
+          <div class="bg-red-50 p-6 rounded-full mb-6">
+            <i data-lucide="syringe" class="w-10 h-10 text-gp-red stroke-[2.5]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Diabetes Management</h3>
+          <div class="rounded-2xl overflow-hidden mb-6 w-full h-56 border border-gray-100">
+            <!-- ★ 糖尿病ケア画像（/images/dog_glucose.jpg） -->
+            <img
+              src="images/dog_glucose.jpg"
+              alt="Dog receiving insulin or glucose monitoring"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          <p class="text-xl font-medium text-gray-600 leading-relaxed">
+            "My dog needs insulin injections exactly 12 hours apart. I need someone who can handle needles and spot the signs of low blood sugar."
+          </p>
+        </div>
+
+        <!-- Case 2: Kidney Disease -->
+        <div
+          class="bg-white p-10 rounded-3xl shadow-md border border-gray-100 flex flex-col items-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+        >
+          <div class="bg-red-50 p-6 rounded-full mb-6">
+            <i data-lucide="droplets" class="w-10 h-10 text-gp-red stroke-[2.5]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Kidney Disease (CKD)</h3>
+          <div class="rounded-2xl overflow-hidden mb-6 w-full h-56 border border-gray-100">
+            <!-- ★ Sub-Q フルイド画像（/images/dog_iv_care.jpg） -->
+            <img
+              src="images/dog_iv_care.jpg"
+              alt="Dog receiving subcutaneous fluids at home"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          <p class="text-xl font-medium text-gray-600 leading-relaxed">
+            "My pet requires Subcutaneous (Sub-Q) fluids to stay hydrated. It's a technical medical task that most standard sitters are afraid to do."
+          </p>
+        </div>
+
+        <!-- Case 3: Mobility Issues -->
+        <div
+          class="bg-white p-10 rounded-3xl shadow-md border border-gray-100 flex flex-col items-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+        >
+          <div class="bg-red-50 p-6 rounded-full mb-6">
+            <i data-lucide="accessibility" class="w-10 h-10 text-gp-red stroke-[2.5]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Senior Mobility Support</h3>
+          <div class="rounded-2xl overflow-hidden mb-6 w-full h-56 border border-gray-100 relative bg-gray-100">
+            <!-- ★ リハビリ画像（/images/dog_rehab.jpg） -->
+            <img
+              src="images/dog_rehab.jpg"
+              alt="Senior dog in mobility sling being supported"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          <p class="text-xl font-medium text-gray-600 leading-relaxed">
+            "My senior dog slips on floors and needs physical lifting assistance to stand or walk. I need a sitter with the strength to help them safely."
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works Section -->
+  <section id="how-it-works" class="py-28 bg-white relative overflow-hidden">
+    <!-- Decorative Background Blur -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 -z-10">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl font-black text-gray-900 sm:text-5xl mb-6">
+          How it works
+        </h2>
+        <p class="text-2xl text-gray-500 max-w-3xl mx-auto font-medium leading-relaxed">
+          We keep the process simple for you and your pet.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
+        <!-- Connector Line (Desktop Only) -->
+        <div
+          class="hidden md:block absolute top-14 left-[20%] right-[20%] h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent z-0">
+        </div>
+
+        <!-- Step 1 -->
+        <div
+          class="relative bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-100/50 flex flex-col items-center text-center z-10 transition-transform hover:-translate-y-1 duration-300">
+          <div
+            class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-blue-600 font-black text-3xl shadow-inner ring-4 ring-white">
+            1
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Inquiry</h3>
+          <p class="text-xl text-gray-500 leading-relaxed font-medium">
+            Tell us about your pet and their needs.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="relative bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-100/50 flex flex-col items-center text-center z-10 transition-transform hover:-translate-y-1 duration-300">
+          <div
+            class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-blue-600 font-black text-3xl shadow-inner ring-4 ring-white">
+            2
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Listening</h3>
+          <p class="text-xl text-gray-500 leading-relaxed font-medium">
+            We listen and ask a few questions to understand your situation perfectly.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="relative bg-white rounded-[2rem] p-10 border border-gray-100 shadow-xl shadow-gray-100/50 flex flex-col items-center text-center z-10 transition-transform hover:-translate-y-1 duration-300">
+          <div
+            class="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-blue-600 font-black text-3xl shadow-inner ring-4 ring-white">
+            3
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Matching</h3>
+          <p class="text-xl text-gray-500 leading-relaxed font-medium">
+            We introduce sitters who fit your situation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA Section -->
+  <section id="contact" class="bg-blue-700 py-24 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-4xl sm:text-5xl font-black text-white mb-8">
+        We are here to help
+      </h2>
+      <p class="text-blue-100 text-2xl mb-12 leading-relaxed font-medium">
+        We will message you to personally discuss your dog's needs promptly
+      </p>
+
+      <!-- action="#" にしておき、必要に応じて変更 -->
+      <form
+        action="#"
+        method="POST"
+        class="max-w-lg mx-auto bg-blue-600/30 p-10 rounded-[2rem] backdrop-blur-sm border border-white/20 text-left shadow-2xl"
+      >
+        <div class="mb-8">
+          <label for="name" class="block text-white text-xl font-bold mb-3 ml-2">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="w-full px-6 py-4 rounded-2xl bg-white border-0 focus:ring-4 focus:ring-blue-300/50 text-gray-900 placeholder-gray-400 font-medium text-xl outline-none shadow-inner"
+          >
+        </div>
+
+        <div class="mb-8">
+          <label for="email" class="block text-white text-xl font-bold mb-3 ml-2">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="w-full px-6 py-4 rounded-2xl bg-white border-0 focus:ring-4 focus:ring-blue-300/50 text-gray-900 placeholder-gray-400 font-medium text-xl outline-none shadow-inner"
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-5 rounded-2xl text-2xl shadow-xl transition duration-300 transform hover:-translate-y-1 focus:ring-4 focus:ring-white/50 outline-none"
+        >
+          Find now
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center"
+    >
+      <div class="flex items-center gap-4 mb-6 md:mb-0">
+        <div
+          class="relative flex items-center justify-center bg-gray-800 w-14 h-14 rounded-xl border border-gray-700"
+        >
+          <i data-lucide="paw-print" class="w-8 h-8"></i>
+          <div
+            class="absolute -top-2 -right-2 bg-gray-900 rounded-full p-1 shadow-sm border-2 border-gray-900"
+          >
+            <div class="bg-red-500 rounded-full w-5 h-5 flex items-center justify-center">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+        <span class="text-3xl font-bold tracking-tight">Companionly</span>
+      </div>
+      <div class="text-gray-400 text-lg font-medium">
+        &copy; 2025 Companionly. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
